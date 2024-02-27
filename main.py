@@ -1,3 +1,5 @@
+from random import randint
+#numeroAlet = randint(0,3)
 while True:
     print("Escolha uma opção:")
     print("1. Pedra")
@@ -13,17 +15,18 @@ while True:
     opcoes = ["Pedra", "Papel", "Tesoura"]
     jogador_escolha -= 1  # Ajusta para índice da lista
 
-    computador_escolha = 1
+    computador_escolha = randint(0,2)
 
   # --------------------------------------------------
   # FAÇA COM QUE A ESCOLHA DO COMPUTADOR SEJA ALEATÓRIA
   # --------------------------------------------------
 
     print("Você escolheu:", opcoes[jogador_escolha])
-    print("O computador escolheu:", opcoes[computador_escolha])
+    print(f"O computador escolheu:", opcoes[computador_escolha])
 
     if jogador_escolha == computador_escolha:
         print("Empate!")
+    
     elif (jogador_escolha == 0 and computador_escolha == 2) or \
          (jogador_escolha == 1 and computador_escolha == 0) or \
          (jogador_escolha == 2 and computador_escolha == 1):
@@ -34,3 +37,4 @@ while True:
     jogar_novamente = input("Deseja jogar novamente? (s/n): ")
     if jogar_novamente.lower() != "s":
         break
+#0 é pedra / 1 é papel/ 2 é tesoura
